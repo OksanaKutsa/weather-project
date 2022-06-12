@@ -1,0 +1,71 @@
+body {
+  background: #f2f2f2;
+}
+
+.container {
+  font-family: "Roboto", sans-serif;
+}
+
+.search {
+  position: relative;
+  top: 50px;
+  text-align: center;
+}
+h1,
+h4,
+h5 {
+  color: #005555;
+}
+h1 {
+  margin-top: 40px;
+}
+.day-temperature,
+.night-temperature,
+.day,
+.icon {
+  text-align: center;
+}
+.day {
+  margin-top: 45px;
+  color: #069a8e;
+  font-size: 18px;
+}
+.day-temperature {
+  font-weight: bold;
+  margin-top: 5px;
+}
+.icon {
+  margin-top: 10px;
+}
+.cities {
+  margin-top: 100px;
+  font-size: 30px;
+  color: #a1e3d8;
+  text-align: center;
+}
+.cities:hover {
+  color: #069a8e;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.cities {
+  transition: all 200ms ease-in-out;
+}
+.sign {
+  text-align: center;
+  position: relative;
+  opacity: 0.5;
+  margin-top: 100px;
+}
+#current-location-button {
+  position: relative;
+  left: 50px;
+  top: -30px;
+
+  display: block;
+  margin: 0 auto;
+  color: #fff;
+  background: #069a8e;
+  border-color: #069a8e;
+  border-radius: 5px;
+}
