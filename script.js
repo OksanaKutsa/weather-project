@@ -71,6 +71,8 @@ function showTemperature(response) {
   let city = response.data.name;
   let humidity = document.querySelector("li#humi");
   humidity.innerHTML = `Humidity: ${response.data.main.humidity} %`;
+  let description = document.querySelector("li#description");
+  description.innerHTML = response.data.weather[0].main;
   let headCity = document.querySelector("#city");
   headCity.innerHTML = city;
 }
