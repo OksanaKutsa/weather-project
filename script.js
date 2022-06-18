@@ -93,7 +93,8 @@ function showPosition(position) {
 function getCurrent() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
-let currentLocationButton = document.querySelector("#current-location-button");
+window.onload = getCurrent;
+//let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrent);
 
 // Temperature
