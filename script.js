@@ -73,6 +73,10 @@ function showTemperature(response) {
   humidity.innerHTML = `Humidity: ${response.data.main.humidity} %`;
   let description = document.querySelector("li#description");
   description.innerHTML = response.data.weather[0].main;
+  let windSpeed = document.querySelector("#windSpeed");
+  windSpeed.innerHTML = `Wind: ${Math.round(
+    response.data.wind.speed * 3.6
+  )} km/h`;
   let headCity = document.querySelector("#city");
   headCity.innerHTML = city;
 }
