@@ -69,6 +69,8 @@ function showTemperature(response) {
   let currentTemperature = document.querySelector("#current-temperature");
   currentTemperature.innerHTML = temperature;
   let city = response.data.name;
+  let humidity = document.querySelector("li#humi");
+  humidity.innerHTML = `Humidity: ${response.data.main.humidity} %`;
   let headCity = document.querySelector("#city");
   headCity.innerHTML = city;
 }
