@@ -65,9 +65,13 @@ let searchForm = document.querySelector("#search");
 searchForm.addEventListener("submit", searchCity);
 
 function showTemperature(response) {
+  console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
   let currentTemperature = document.querySelector("#current-temperature");
   currentTemperature.innerHTML = temperature;
+  let nightTemperature = Math.round(response.data.main.temp_min);
+  let minNightTemperature = document.querySelector("#night-temperature");
+  minNightTemperature.innerHTML = nightTemperature;
   let city = response.data.name;
   let humidity = document.querySelector("li#humi");
   humidity.innerHTML = `Humidity: ${response.data.main.humidity} %`;
@@ -94,9 +98,6 @@ function getCurrent() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 window.onload = getCurrent;
-//let currentLocationButton = document.querySelector("#current-location-button");
-currentLocationButton.addEventListener("click", getCurrent);
-
 // Temperature
 // let celciusDegrees = document.querySelector(".celciusLink");
 // let fahrenheitDegrees = document.querySelector(".fahrenheitLink");
