@@ -50,13 +50,43 @@ h1 {
 .icon {
   margin-top: 10px;
 }
-.cities {
+#mainCities {
   margin-top: 100px;
   font-size: 30px;
   color: #a1e3d8;
   text-align: center;
 }
-.cities:hover {
+#lisbon {
+  color: #a1e3d8;
+}
+#sofia {
+  color: #a1e3d8;
+}
+#vilnius {
+  color: #a1e3d8;
+}
+#riga {
+  color: #a1e3d8;
+}
+#warsaw {
+  color: #a1e3d8;
+}
+#sofia:hover {
+  color: #069a8e;
+}
+#lisbon:hover {
+  color: #069a8e;
+}
+#vilnius:hover {
+  color: #069a8e;
+}
+#warsaw:hover {
+  color: #069a8e;
+}
+#riga:hover {
+  color: #069a8e;
+}
+#mainCities:hover {
   color: #069a8e;
   cursor: pointer;
   text-decoration: underline;
