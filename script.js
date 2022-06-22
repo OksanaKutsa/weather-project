@@ -69,9 +69,6 @@ function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let currentTemperature = document.querySelector("#current-temperature");
   currentTemperature.innerHTML = temperature;
-  let nightTemperature = Math.round(response.data.main.temp_min);
-  let minNightTemperature = document.querySelector("#night-temperature");
-  minNightTemperature.innerHTML = nightTemperature;
   let city = response.data.name;
   let humidity = document.querySelector("li#humi");
   humidity.innerHTML = `Humidity: ${response.data.main.humidity} %`;
