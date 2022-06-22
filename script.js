@@ -83,6 +83,11 @@ function showTemperature(response) {
   )} km/h`;
   let headCity = document.querySelector("#city");
   headCity.innerHTML = city;
+  let iconElement = document.querySelector("#main-icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 //current weather
 function showPosition(position) {
