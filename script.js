@@ -65,10 +65,9 @@ let searchForm = document.querySelector("#search");
 searchForm.addEventListener("submit", searchCity);
 
 function showTemperature(response) {
-  console.log(response.data);
-  let temperature = Math.round(response.data.main.temp);
   let currentTemperature = document.querySelector("#current-temperature");
-  currentTemperature.innerHTML = temperature;
+  celciusTemperature = response.data.main.temp;
+  currentTemperature.innerHTML = Math.round(celciusTemperature);
   let city = response.data.name;
   let humidity = document.querySelector("li#humi");
   humidity.innerHTML = `Humidity: ${response.data.main.humidity} %`;
@@ -162,6 +161,15 @@ function mainCitySofia(event) {
 let citySofia = document.querySelector("#sofia");
 citySofia.addEventListener("click", mainCitySofia);
 // Temperature
+function dispalyFahrenheitTemp(event) {
+  event.preventDefault();
+  let currentTemperature = document.querySelector("#current-temperature");
+  let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
+  currentTemperature.innerHTML = Math.round(fahrenheitTemperature);
+}
+let celciusTemperature = null;
+let fahrenheitDegrees = document.querySelector(".fahrenheitLink");
+fahrenheitDegrees.addEventListener("click", dispalyFahrenheitTemp);
 // let celciusDegrees = document.querySelector(".celciusLink");
 // let fahrenheitDegrees = document.querySelector(".fahrenheitLink");
 // function celciusTemp(event) {
