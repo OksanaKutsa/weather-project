@@ -50,20 +50,22 @@ function currentDate(date) {
 let date = document.querySelector(".date");
 date.innerHTML = currentDate(now);
 // Search form
-function searchCity(event) {
-  event.preventDefault();
-  let inputCity = document.querySelector("#input-city-search");
-  let headCity = document.querySelector("#city");
-  headCity.innerHTML = `${inputCity.value}`;
+function search(city) {
   let apiKey = "427e704ef746829b25864c7ff811b8fc";
   let units = "metric";
   let apiEnpoint = "https://api.openweathermap.org/data/2.5/weather?";
-  let apiUrl = `${apiEnpoint}q=${inputCity.value}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `${apiEnpoint}q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemperature);
 }
+function handleSubmit(event) {
+  event.preventDefault();
+  let inputCity = document.querySelector("#input-city-search");
+  search(inputCity.value);
+}
 let searchForm = document.querySelector("#search");
-searchForm.addEventListener("submit", searchCity);
+searchForm.addEventListener("submit", handleSubmit);
 
+search("Kyiv");
 function showTemperature(response) {
   let currentTemperature = document.querySelector("#current-temperature");
   celciusTemperature = response.data.main.temp;
