@@ -167,9 +167,16 @@ function dispalyFahrenheitTemp(event) {
   let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
   currentTemperature.innerHTML = Math.round(fahrenheitTemperature);
 }
+function dispalyCelciusTemp(event) {
+  event.preventDefault();
+  let currentTemperature = document.querySelector("#current-temperature");
+  currentTemperature.innerHTML = Math.round(celciusTemperature);
+}
 let celciusTemperature = null;
 let fahrenheitDegrees = document.querySelector(".fahrenheitLink");
 fahrenheitDegrees.addEventListener("click", dispalyFahrenheitTemp);
+let celciusDegrees = document.querySelector(".celciusLink");
+celciusDegrees.addEventListener("click", dispalyCelciusTemp);
 // let celciusDegrees = document.querySelector(".celciusLink");
 // let fahrenheitDegrees = document.querySelector(".fahrenheitLink");
 // function celciusTemp(event) {
