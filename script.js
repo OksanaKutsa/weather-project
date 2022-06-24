@@ -163,46 +163,21 @@ citySofia.addEventListener("click", mainCitySofia);
 // Temperature
 function dispalyFahrenheitTemp(event) {
   event.preventDefault();
+  celciusDegrees.classList.remove("active");
+  fahrenheitDegrees.classList.add("active");
   let currentTemperature = document.querySelector("#current-temperature");
   let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
   currentTemperature.innerHTML = Math.round(fahrenheitTemperature);
 }
 function dispalyCelciusTemp(event) {
   event.preventDefault();
+  celciusDegrees.classList.add("active");
+  fahrenheitDegrees.classList.remove("active");
   let currentTemperature = document.querySelector("#current-temperature");
   currentTemperature.innerHTML = Math.round(celciusTemperature);
 }
 let celciusTemperature = null;
-let fahrenheitDegrees = document.querySelector(".fahrenheitLink");
+let fahrenheitDegrees = document.querySelector("#fahrenheit-link");
 fahrenheitDegrees.addEventListener("click", dispalyFahrenheitTemp);
-let celciusDegrees = document.querySelector(".celciusLink");
+let celciusDegrees = document.querySelector("#celcius-link");
 celciusDegrees.addEventListener("click", dispalyCelciusTemp);
-// let celciusDegrees = document.querySelector(".celciusLink");
-// let fahrenheitDegrees = document.querySelector(".fahrenheitLink");
-// function celciusTemp(event) {
-//   event.preventDefault();
-//   let celTem = document.querySelector("#current-temperature");
-//   celTem.innerHTML = 19;
-// }
-// celciusDegrees.addEventListener("click", celciusTemp);
-// function fahrenheitTemp(event) {
-//   event.preventDefault();
-//   let fahTem = document.querySelector("#current-temperature");
-//   fahTem.innerHTML = 66;
-// }
-// fahrenheitDegrees.addEventListener("click", fahrenheitTemp);
-// //night temperature
-// let nightCelDegree = document.querySelector(".celciusLinkNight");
-// let nightFahDegree = document.querySelector(".fahrenheitLinkNight");
-// function nightCel(event) {
-//   event.preventDefault();
-//   let nightCel = document.querySelector("#night-temperature");
-//   nightCel.innerHTML = 8;
-// }
-// nightCelDegree.addEventListener("click", nightCel);
-// function nightFah(event) {
-//   event.preventDefault();
-//   let nightFah = document.querySelector("#night-temperature");
-//   nightFah.innerHTML = 48;
-// }
-// nightFahDegree.addEventListener("click", nightFah);

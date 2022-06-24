@@ -115,3 +115,10 @@ h1 {
   position: relative;
   bottom: 100px;
 }
+.weather-temperature .active {
+  color: black;
+  cursor: default;
+}
+.weather-temperature .active :hover {
+  text-decoration: none;
+}
