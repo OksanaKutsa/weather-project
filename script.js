@@ -102,66 +102,16 @@ function getCurrent() {
 }
 window.onload = getCurrent;
 //main cities
-// function mainCityLisbon(event) {
-//   event.preventDefault();
-//   let headCity = document.querySelector("#city");
-//   headCity.innerHTML = "Lisbon";
-//   let apiKey = "427e704ef746829b25864c7ff811b8fc";
-//   let units = "metric";
-//   let apiEnpoint = "https://api.openweathermap.org/data/2.5/weather?";
-//   let apiUrl = `${apiEnpoint}q=lisbon&appid=${apiKey}&units=${units}`;
-//   axios.get(apiUrl).then(showTemperature);
-// }
 let cityLisbon = document.querySelector("#lisbon");
-cityLisbon.addEventListener("click", search("lisbon"));
-// function mainCityWarsaw(event) {
-//   event.preventDefault();
-//   let headCity = document.querySelector("#city");
-//   headCity.innerHTML = "Warsaw";
-//   let apiKey = "427e704ef746829b25864c7ff811b8fc";
-//   let units = "metric";
-//   let apiEnpoint = "https://api.openweathermap.org/data/2.5/weather?";
-//   let apiUrl = `${apiEnpoint}q=warsaw&appid=${apiKey}&units=${units}`;
-//   axios.get(apiUrl).then(showTemperature);
-// }
+cityLisbon.addEventListener("click", () => search("lisbon"));
 let cityWarsaw = document.querySelector("#warsaw");
-cityWarsaw.addEventListener("click", search("warsaw"));
-// function mainCityRiga(event) {
-//   event.preventDefault();
-//   let headCity = document.querySelector("#city");
-//   headCity.innerHTML = "Riga";
-//   let apiKey = "427e704ef746829b25864c7ff811b8fc";
-//   let units = "metric";
-//   let apiEnpoint = "https://api.openweathermap.org/data/2.5/weather?";
-//   let apiUrl = `${apiEnpoint}q=riga&appid=${apiKey}&units=${units}`;
-//   axios.get(apiUrl).then(showTemperature);
-// }
+cityWarsaw.addEventListener("click", () => search("warsaw"));
 let cityRiga = document.querySelector("#riga");
-cityRiga.addEventListener("click", search("riga"));
-// function mainCityVilnius(event) {
-//   event.preventDefault();
-//   let headCity = document.querySelector("#city");
-//   headCity.innerHTML = "Vilnius";
-//   let apiKey = "427e704ef746829b25864c7ff811b8fc";
-//   let units = "metric";
-//   let apiEnpoint = "https://api.openweathermap.org/data/2.5/weather?";
-//   let apiUrl = `${apiEnpoint}q=vilnius&appid=${apiKey}&units=${units}`;
-//   axios.get(apiUrl).then(showTemperature);
-// }
+cityRiga.addEventListener("click", () => search("riga"));
 let cityVilnius = document.querySelector("#vilnius");
-cityVilnius.addEventListener("click", search("vilnius"));
-// function mainCitySofia(event) {
-//   event.preventDefault();
-//   let headCity = document.querySelector("#city");
-//   headCity.innerHTML = "Sofia";
-//   let apiKey = "427e704ef746829b25864c7ff811b8fc";
-//   let units = "metric";
-//   let apiEnpoint = "https://api.openweathermap.org/data/2.5/weather?";
-//   let apiUrl = `${apiEnpoint}q=sofia&appid=${apiKey}&units=${units}`;
-//   axios.get(apiUrl).then(showTemperature);
-// }
+cityVilnius.addEventListener("click", () => search("vilnius"));
 let citySofia = document.querySelector("#sofia");
-citySofia.addEventListener("click", search("sofia"));
+citySofia.addEventListener("click", () => search("sofia"));
 // Temperature
 function dispalyFahrenheitTemp(event) {
   event.preventDefault();
