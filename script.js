@@ -50,7 +50,8 @@ function currentDate(date) {
 let date = document.querySelector(".date");
 date.innerHTML = currentDate(now);
 //forecast
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
@@ -72,9 +73,8 @@ function displayForecast() {
 // Search form
 function search(city) {
   let apiKey = "427e704ef746829b25864c7ff811b8fc";
-  let units = "metric";
   let apiEnpoint = "https://api.openweathermap.org/data/2.5/weather?";
-  let apiUrl = `${apiEnpoint}q=${city}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `${apiEnpoint}q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
 }
 function handleSubmit(event) {
@@ -84,8 +84,12 @@ function handleSubmit(event) {
 }
 let searchForm = document.querySelector("#search");
 searchForm.addEventListener("submit", handleSubmit);
-displayForecast();
 search("Kyiv");
+function getForecast(coordinates) {
+  let apiKey = "427e704ef746829b25864c7ff811b8fc";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 function showTemperature(response) {
   let currentTemperature = document.querySelector("#current-temperature");
   celciusTemperature = response.data.main.temp;
@@ -106,6 +110,7 @@ function showTemperature(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  getForecast(response.data.coord);
 }
 //current weather
 function showPosition(position) {
@@ -113,8 +118,7 @@ function showPosition(position) {
   let lon = position.coords.longitude;
   let endpoint = "https://api.openweathermap.org/data/2.5/weather";
   let apiKey = "427e704ef746829b25864c7ff811b8fc";
-  let units = "metric";
-  let apiUrl = `${endpoint}?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `${endpoint}?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
 }
 function getCurrent() {
