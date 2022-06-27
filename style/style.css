@@ -32,17 +32,18 @@ h5 {
 h1 {
   margin-top: 40px;
 }
-.day-temperature,
-.day,
-.icon {
+.weather-forecast {
   text-align: center;
 }
-.day {
+.forecast-min-temperature {
+  opacity: 0.6;
+}
+.weather-forecast-day {
   margin-top: -40px;
   color: #069a8e;
   font-size: 18px;
 }
-.day-temperature {
+.forecast-max-temperature {
   font-weight: bold;
   margin-top: 5px;
 }
@@ -55,18 +56,10 @@ h1 {
   color: #a1e3d8;
   text-align: center;
 }
-#lisbon {
-  color: #a1e3d8;
-}
-#sofia {
-  color: #a1e3d8;
-}
-#vilnius {
-  color: #a1e3d8;
-}
-#riga {
-  color: #a1e3d8;
-}
+#lisbon,
+#sofia,
+#vilnius,
+#riga,
 #warsaw {
   color: #a1e3d8;
 }
