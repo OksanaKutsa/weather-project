@@ -11,7 +11,7 @@ body {
 
 #search {
   text-align: center;
-  position: relative;
+  position: sticky;
   top: 80px;
   border-radius: 20px;
 }
